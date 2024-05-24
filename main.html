@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom">
+            <div class="logo">Logo</div>
+            <button class="btn btn-primary">Create</button>
+        </header>
+
+        <main class="container my-4 flex-grow-1">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Row</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Del/Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example rows -->
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Task 1</td>
+                        <td><input type="checkbox"></td>
+                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Task 2</td>
+                        <td><input type="checkbox"></td>
+                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </main>
+
+        <footer class="bg-light p-3 text-center border-top">
+            <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-link">Back to the top</a>
+                <div class="copyright-text">© 2024 Your Company</div>
+                <a href="#" class="btn btn-link">Login</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
