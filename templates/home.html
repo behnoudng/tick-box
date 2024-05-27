@@ -1,11 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Task Management</title>
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100">
@@ -28,6 +30,12 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>Task 1</td>
+                        <td><input type="checkbox"></td>
+                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Task 2</td>
                         <td><input type="checkbox"></td>
                         <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
                     </tr>
