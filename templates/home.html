@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'icons/favicon.ico'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Task Management</title>
 </head>
 <body>
@@ -21,30 +22,35 @@
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Row</th>
-                        <th scope="col">Title</th>
                         <th scope="col">State</th>
+                        <th scope="col">Title</th>
                         <th scope="col">Del/Edit</th>
+                        <th scope="col">Done</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Task 1</td>
-                        <td><input type="checkbox"></td>
-                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Task 2</td>
-                        <td><input type="checkbox"></td>
-                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Task 2</td>
-                        <td><input type="checkbox"></td>
-                        <td><button class="btn btn-danger btn-sm">Del</button> <button class="btn btn-secondary btn-sm">Edit</button></td>
-                    </tr>
+                    {% for tsk in task_list %}
+                        <tr>
+                            <th scope="row" style="width:30px;">1</th>
+                            <td style="width:30px;">
+                                {% if tsk.status %}
+                                    <img src="{% static 'icons/green-check.svg' %}" alt="green check" width="30px" heigh="30px">
+                                {% else %}
+                                    <img src="{% static 'icons/gray-circle.svg' %}" alt="green check" width="30px" heigh="30px">
+                                {% endif %}
+                            </td>
+                            <td >{{ tsk.title }}</td>
+                            <td style="width:120px;">
+                                <button class="btn btn-danger btn-sm">Del</button>
+                                <button class="btn btn-secondary btn-sm">Edit</button>
+                            </td>
+                            <td style="width:100px;">
+                                <button class="btn btn-success btn-sm">Done</button>
+                                
+                            </td>
+                        </tr>
+                    {% endfor %}
+                
                 </tbody>
             </table>
         </main>

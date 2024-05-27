@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from .models import Task
 
-class TestTemplate(TemplateView):
+class TestTemplate(ListView):
+    model = Task
     template_name = 'home.html'
