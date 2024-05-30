@@ -1,7 +1,7 @@
 1. When I press the Done button I want the database to update the field "status" to True instead of False (Can even make a toggle)
 
 2. Make "Del" btn work.
-3. Make "Edit" btn work.
+
 
 
 5. Make "Login/Sign up" button work.
@@ -11,3 +11,5 @@
 
 Ideas for future "features":
 1- Filter by status (Show tasks that are not completed first) or make the completed tasks less visible (like in light gray color)
+
+2- Add profile picture next to the logout button

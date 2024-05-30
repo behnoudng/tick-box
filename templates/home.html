@@ -27,14 +27,14 @@
                         </td>
 
                         <!-- For Edit -->
-                        <td >{{ tsk.title }}
-                
+                        <td >
+                            {{ tsk.title }}
                         </td>
                         <!-- -------- -->
 
                         <td style="width:120px;">
-                            <button class="btn btn-danger btn-sm">Del</button>
-                            <button class="btn btn-secondary btn-sm">Edit</button>
+                            <a class="btn btn-danger btn-sm">Del</a>
+                            <a class="btn btn-secondary btn-sm" href="{% url 'update_task' tsk.pk %}">Edit</a>
                         </td>
                         <td style="width:100px;">
                             <button class="btn btn-success btn-sm">Done</button>

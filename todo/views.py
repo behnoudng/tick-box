@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Task
 
 
@@ -12,4 +12,10 @@ class Home(ListView):
 class CreateNewTask(CreateView):
     model = Task
     template_name = "task_new.html"
+    fields = ["title", "status"]
+
+
+class UpdateTask(UpdateView):
+    model = Task
+    template_name = "task_edit.html"
     fields = ["title", "status"]
