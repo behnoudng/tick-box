@@ -1,81 +1,51 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static 'icons/favicon.ico'%}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
-    rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Task Management</title>
-</head>
-<body>
-    <div class="d-flex flex-column min-vh-100">
-        <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom" style="padding: 5px !important;">
-            <div class="logo"><img src="{% static 'icons/navbar_logo.svg' %}" alt="navbar logo" width="45px" height="45px"></div>
-            <a class="btn btn-primary" href="{% url 'new_task' %}">Create</a>
-        </header>
 
-        <main class="container my-4 flex-grow-1">
-            <table class="table table-bordered">
-                <thead class="thead-light">
+{% block content %}
+    <main class="container my-4 flex-grow-1">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Row</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Del/Edit</th>
+                    <th scope="col">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tsk in task_list %}
                     <tr>
-                        <th scope="col">Row</th>
-                        <th scope="col">State</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Del/Edit</th>
-                        <th scope="col">Done</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for tsk in task_list %}
-                        <tr>
-                            <th scope="row" style="width:30px;">{{ forloop.counter }}</th>
-                            <td style="width:30px;">
-                                {% if tsk.status %}
-                                    <img src="{% static 'icons/green-check.svg' %}" alt="green check" width="30px" heigh="30px">
-                                {% else %}
-                                    <img src="{% static 'icons/gray-circle.svg' %}" alt="green check" width="30px" heigh="30px">
-                                {% endif %}
-                            </td>
+                        <th scope="row" style="width:30px;">{{ forloop.counter }}</th>
+                        <td style="width:30px;">
+                            {% if tsk.status %}
+                                <img src="{% static 'icons/green-check.svg' %}" alt="green check" width="30px" heigh="30px">
+                            {% else %}
+                                <img src="{% static 'icons/gray-circle.svg' %}" alt="green check" width="30px" heigh="30px">
+                            {% endif %}
+                        </td>
 
-                            <!-- For Edit -->
-                            <td >{{ tsk.title }}
-                    
-                            </td>
-                            <!-- -------- -->
-
-                            <td style="width:120px;">
-                                <button class="btn btn-danger btn-sm">Del</button>
-                                <button class="btn btn-secondary btn-sm">Edit</button>
-                            </td>
-                            <td style="width:100px;">
-                                <button class="btn btn-success btn-sm">Done</button>
-                                
-                            </td>
-                        </tr>
-                    {% endfor %}
+                        <!-- For Edit -->
+                        <td >{{ tsk.title }}
                 
-                </tbody>
-            </table>
-        </main>
+                        </td>
+                        <!-- -------- -->
 
-        <footer class="bg-light p-3 text-center border-top" style="padding: 5px !important;">
-            <div class="d-flex justify-content-between">
-                <a href="#" class="btn btn-link">Back to the top</a>
-                <div class="d-flex justify-content-center align-items-center" style="flex-grow: 1;">
-                    <div class="copyright-text">© 2024 Your Company</div>
-                </div>
-                <a href="#" class="btn btn-link">Login</a>
-            </div>
-        </footer>
-    </div>
+                        <td style="width:120px;">
+                            <button class="btn btn-danger btn-sm">Del</button>
+                            <button class="btn btn-secondary btn-sm">Edit</button>
+                        </td>
+                        <td style="width:100px;">
+                            <button class="btn btn-success btn-sm">Done</button>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+    </main>
+{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+        

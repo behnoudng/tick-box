@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'icons/favicon.ico'%}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
+    rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Task Management</title>
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom" style="padding: 5px !important;">
+            <div class="logo"><img src="{% static 'icons/navbar_logo.svg' %}" alt="navbar logo" width="45px" height="45px"></div>
+            <a class="btn btn-primary" href="{% url 'new_task' %}">Create</a>
+        </header>
+        {% block content %}
+
+        {%  endblock %}
+        <footer class="bg-light p-3 text-center border-top" style="padding: 5px !important;">
+            <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-link">Back to the top</a>
+                <div class="d-flex justify-content-center align-items-center" style="flex-grow: 1;">
+                    <div class="copyright-text">© 2024 Your Company</div>
+                </div>
+                <a href="#" class="btn btn-link">Login</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
