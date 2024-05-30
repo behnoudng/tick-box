@@ -7,3 +7,7 @@
 5. Make "Login/Sign up" button work.
 
 6. Make "Back to the top" link work.
+
+
+Ideas for future "features":
+1- Filter by status (Show tasks that are not completed first) or make the completed tasks less visible (like in light gray color)
