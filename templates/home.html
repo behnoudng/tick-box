@@ -33,7 +33,7 @@
                         <!-- -------- -->
 
                         <td style="width:120px;">
-                            <a class="btn btn-danger btn-sm">Del</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'del_task' tsk.pk %}">Del</a>
                             <a class="btn btn-secondary btn-sm" href="{% url 'update_task' tsk.pk %}">Edit</a>
                         </td>
                         <td style="width:100px;">

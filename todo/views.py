@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Task
 
 
@@ -19,3 +20,8 @@ class UpdateTask(UpdateView):
     model = Task
     template_name = "task_edit.html"
     fields = ["title", "status"]
+
+class DeleteTask(DeleteView):
+    model = Task
+    template_name = "task_del.html"
+    success_url = reverse_lazy('home')
