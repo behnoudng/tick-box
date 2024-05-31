@@ -5,7 +5,7 @@
 {% block content %}
     <main class="container my-4 flex-grow-1">
         <table class="table table-bordered">
-            <thead class="thead-light">
+            <thead style="background-color: lightgray;">
                 <tr>
                     <th scope="col">Row</th>
                     <th scope="col">State</th>
@@ -28,7 +28,11 @@
 
                         <!-- For Edit -->
                         <td >
-                            {{ tsk.title }}
+                            {% if not tsk.status %}
+                                <p>{{ tsk.title }}</p>
+                            {% else %}
+                                <s>{{ tsk.title }}</s>
+                            {% endif %}
                         </td>
                         <!-- -------- -->
 
@@ -36,10 +40,14 @@
                             <a class="btn btn-danger btn-sm" href="{% url 'del_task' tsk.pk %}">Del</a>
                             <a class="btn btn-secondary btn-sm" href="{% url 'update_task' tsk.pk %}">Edit</a>
                         </td>
-                        <td style="width:100px;">
-                            <button class="btn btn-success btn-sm">Done</button>
-                            
+                        {% if not tsk.status %}
+                            <td style="width:100px;">
+                                <a class="btn btn-success btn-sm" href="{% url 'mark_done' pk=tsk.pk %}">Done</a>
+                            </td>
+                        {% else %}
+                        <td class="thead-light" style="width:100px;border:none;">
                         </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             
