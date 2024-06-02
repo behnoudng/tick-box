@@ -46,11 +46,11 @@
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     {% if user.is_authenticated %}
-                        <p>You're Successfully Logged In</p> |
-                        <a href="#" class="btn btn-link" style="padding: 0 !important;">Logout</a>
+                        <p>Welcome {{user.username}} </p> |
+                        <a href="{% url 'logout' %}" class="btn btn-link" style="padding: 0 !important;">Logout</a>
                     {% else %}
-                        <p>You're Successfully Logged In</p> |
-                        <a href="#" class="btn btn-link" style="padding: 0 !important;">Log out</a>
+                        <p>You're Not Logged In</p> |
+                        <a href="{% url 'login' %}" class="btn btn-link" style="padding: 0 !important;">Log In</a>
                     {% endif %}
                 </div>
                 
