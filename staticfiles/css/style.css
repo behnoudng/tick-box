@@ -1,5 +1,50 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.no-padding{
+    padding: 0px !important;
+}
+
+
+footer{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    border-top: 1px solid #ccc;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .d-flex.justify-content-between {
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
+}
+
+footer .d-flex.justify-content-between p,
+footer .d-flex.justify-content-between a {
+    margin: 0;
+    line-height: 1.5;
+}
+
+footer .d-flex.d-flex.justify-content-between a{
+    margin-right: 12px;
+}
+
+footer .d-flex.justify-content-between .copyright-text {
+    text-align: center;
+    flex-grow: 1;
+}
+
+footer .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 header .logo {
@@ -7,15 +52,9 @@ header .logo {
     font-weight: bold;
 }
 
-footer .copyright-text {
-    font-size: 0.875rem;
+.margin-20{
+    margin: 20px;
 }
 
-footer a {
-    text-decoration: none;
-    color: #007bff;
-}
 
-footer a:hover {
-    text-decoration: underline;
-}
+
